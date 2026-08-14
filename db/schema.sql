@@ -18,5 +18,6 @@ CREATE TABLE IF NOT EXISTS players (
     user_id INTEGER REFERENCES users(id),
     room_id INTEGER REFERENCES rooms(id),
     role TEXT,
-    created_at TIMESTAMP DEFAULT NOW()
+    created_at TIMESTAMP DEFAULT NOW(),
+    UNIQUE (user_id, room_id)
 );
